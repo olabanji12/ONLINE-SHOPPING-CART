@@ -14,8 +14,19 @@ public class ShoppingCartManager {
         System.out.println("q - Quit");
     }
 
-    public static void executeMenu(char choice, ShoppingCart newCart, Scanner scanChoice) {
+    public static void executeMenu(char choice, ShoppingCart newCart, Scanner scan) {
+        if(choice == 'o'){
+            System.out.println("OUTPUT SHOPPING CART");
+            newCart.printTotal();
+        }
+        if(choice == 'i'){
+            System.out.println("OUTPUT SHOPPING CART");
+            newCart.printDescriptions();
+        }
+        if(choice == 'a'){
+            System.out.println("ADD ITEM TO CART");
 
+        }
     }
 
     public static void main(String[] args) {
@@ -41,7 +52,10 @@ public class ShoppingCartManager {
                 userChoice = scan.next().charAt(0);
             }
             if(userChoice == 'a' || userChoice == 'd' || userChoice == 'c' || userChoice == 'i' || userChoice == 'o'){
-
+                executeMenu(userChoice,cart, scan);
+                printMenu();
+                System.out.println("Choose an option:");
+                userChoice = scan.next().charAt(0);
             }
 
         }
