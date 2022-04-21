@@ -19,14 +19,41 @@ public class ShoppingCartManager {
             System.out.println("OUTPUT SHOPPING CART");
             newCart.printTotal();
         }
-        if(choice == 'i'){
+        else if(choice == 'i'){
             System.out.println("OUTPUT SHOPPING CART");
             newCart.printDescriptions();
         }
-        if(choice == 'a'){
+        else if(choice == 'a'){
             System.out.println("ADD ITEM TO CART");
-
+            System.out.println("Enter the item name:");
+            String name = scan.nextLine();
+            System.out.println("Enter the item description:");
+            String description = scan.nextLine();
+            System.out.println("Enter the item price:");
+            int price = scan.nextInt();
+            System.out.println("Enter the item quantity:");
+            int quantity = scan.nextInt();
+            ItemToPurchase item = new ItemToPurchase(name, description, price, quantity);
+            newCart.addItem(item);
         }
+        else if(choice == 'd'){
+            System.out.println("REMOVE ITEM FROM CART");
+            System.out.println("Enter name of item to remove:");
+            String name = scan.nextLine();
+            newCart.removeItem(name);
+        }
+        else if(choice == 'c'){
+            System.out.println("CHANGE ITEM QUANTITY");
+            System.out.println("Enter the item name:");
+            String name = scan.nextLine();
+            System.out.println("Enter the new quantity:");
+            int quantity = scan.nextInt();
+            ItemToPurchase item = new ItemToPurchase();
+            item.setName(name);
+            item.setQuantity(quantity);
+            newCart.modifyItem(item);
+        }
+
     }
 
     public static void main(String[] args) {

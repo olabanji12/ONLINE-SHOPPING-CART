@@ -44,9 +44,7 @@ public class ShoppingCart {
         for (ItemToPurchase Item : cartItems) {
             if (Item.getName().equals(item.getName())) {
                 contains = true;
-                if (Item.getItemDescription() != "none" || Item.getPrice() != 0 || Item.getQuantity() != 0){
-                    Item.setItemDescription(item.getItemDescription());
-                    Item.setPrice(item.getPrice());
+                if (Item.getQuantity() != 0){
                     Item.setQuantity(item.getQuantity());
                 }
                     // find the object in the list and replace it if the valu is deafult
