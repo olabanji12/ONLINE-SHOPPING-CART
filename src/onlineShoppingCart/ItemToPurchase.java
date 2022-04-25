@@ -44,17 +44,17 @@ public class ItemToPurchase {
         this.itemQuantity = itemQuantity;
     }
 
-    public String getItemDescription() {
+    public String getDescription() {
         return itemDescription;
     }
 
-    public void setItemDescription(String itemDescription) {
+    public void setDescription(String itemDescription) {
         this.itemDescription = itemDescription;
     }
     public void printItemCost(){
         System.out.println(getName() + " " + getQuantity() + " @ $" + getPrice() + " = " + (getQuantity() * getPrice()));
     }
     public void printItemDescription(){
-        System.out.println(getName() +": " + getItemDescription() + ".");
+        System.out.println(getName() +": " + getDescription());
     }
 }
