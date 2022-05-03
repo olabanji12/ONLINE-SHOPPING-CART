@@ -3,20 +3,26 @@ package onlineShoppingCart;
 import java.util.ArrayList;
 
 public class ShoppingCart {
+    // defined private variables
     private String customerName;
     private String currentDate;
+
+    // defines an arraylist used to store items
     private ArrayList<ItemToPurchase> cartItems = new ArrayList<>();
 
+    // no-arg constructor
     public ShoppingCart() {
         customerName = "none";
         currentDate = "January 1, 2016";
     }
 
+    // Parameterized constructor
     public ShoppingCart(String customerName, String currentDate) {
         this.customerName = customerName;
         this.currentDate = currentDate;
     }
 
+    //getter methods for customer name and date
     public String getCustomerName() {
         return customerName;
     }
@@ -24,9 +30,13 @@ public class ShoppingCart {
     public String getDate() {
         return currentDate;
     }
+
+    // adds item to user's cart
     public void addItem(ItemToPurchase item){
         cartItems.add(item);
     }
+
+    // allows user to remove item from cart
     public void removeItem(String itemName){
         boolean contains = false;
         for (ItemToPurchase item: cartItems) {
@@ -39,6 +49,8 @@ public class ShoppingCart {
         if(!contains)
             System.out.println("Item not found in cart. Nothing removed.");
     }
+
+    // allows users to modify the quantity of items in the cart
     public void modifyItem(ItemToPurchase item){
         boolean contains = false;
         for (ItemToPurchase Item : cartItems) {
@@ -54,6 +66,8 @@ public class ShoppingCart {
             System.out.println("Item not found in cart. Nothing modified.");
         }
     }
+
+    // returns the number of items in a cart
     public int getNumItemsInCart(){
         int total =0;
         for (ItemToPurchase Item: cartItems) {
@@ -61,6 +75,8 @@ public class ShoppingCart {
         }
         return total;
     }
+
+    // returns total cost of all items in the cart
     public int getCostOfCart(){
         int totalCost =0;
         for (ItemToPurchase Item: cartItems) {

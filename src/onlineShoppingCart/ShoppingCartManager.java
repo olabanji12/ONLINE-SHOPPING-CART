@@ -3,6 +3,7 @@ package onlineShoppingCart;
 import java.util.Scanner;
 
 public class ShoppingCartManager {
+    // printMenu method displays the menu
     public static void printMenu(){
         System.out.println("MENU");
         System.out.println("a - Add item to cart");
@@ -19,6 +20,7 @@ public class ShoppingCartManager {
 
     }
 
+    // The executeMenu carries out all the menu options with the proper parameters
     public static void executeMenu(char choice, ShoppingCart newCart, Scanner scan) {
         if(choice == 'o'){
             newCart.printTotal();
@@ -84,11 +86,13 @@ public class ShoppingCartManager {
         userChoice = scan.next().charAt(0);
 
         while(userChoice != 'q'){
+            // this if statement checks if the user's choice is wrong and displays the menu
             if(userChoice != 'a' && userChoice != 'd' && userChoice != 'c' && userChoice != 'i' && userChoice != 'o'){
-
                 System.out.println("Choose an option:");
                 userChoice = scan.next().charAt(0);
             }
+
+            // This if statement checks if the user's choice is right, then it executes the option and displays the menu
             if(userChoice == 'a' || userChoice == 'd' || userChoice == 'c' || userChoice == 'i' || userChoice == 'o'){
                 executeMenu(userChoice,cart, scan);
                 System.out.println();
